@@ -2,6 +2,27 @@
   "version": "1.0.0",
   "name": "@batistajb/opentelemetry-nestjs",
   "main": "dist/index.js",
+
+  "author": "batistadasilvaalvesjoao@gmail.com",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/batistajb/opentelemetry-nestjs.git"
+  },
+  "keywords": [
+    "nestjs",
+    "opentelemetry",
+    "tracing",
+    "observability",
+    "metric",
+    "prometheus",
+    "zipkin",
+    "jaeger"
+  ],
+  "bugs": {
+    "url": "https://github.com/batistajb/opentelemetry-nestjs/issues"
+  },
+  "homepage": "https://github.com/batistajb/opentelemetry-nestjs#readme",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
@@ -9,6 +30,7 @@
     "start": "nest start",
     "start:dev": "nest start --watch"
   },
+
   "dependencies": {
     "@nestjs/event-emitter": "^1.4.1",
     "@nestjs/microservices": "^9.3.9",
