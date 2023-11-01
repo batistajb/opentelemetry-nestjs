@@ -27,7 +27,19 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - run: npm publish
+
+      - name: Build
+        run: npm run build:packages
+
+      - name: Config git metadata
+        run: |
+          git config --global user.name 'João Batista'
+          git config --global user.email 'batistadasilvaalvesjoao@gmail.com'
+
+      - name: Publish the packages
+        run: |
+          npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-          NPM_CONFIG_USERCONFIG: .npmrc
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
