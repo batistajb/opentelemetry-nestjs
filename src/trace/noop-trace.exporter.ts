@@ -8,4 +8,8 @@ export class NoopTraceExporter implements SpanExporter {
   shutdown(): Promise<void> {
     return Promise.resolve(undefined);
   }
+
+  forceFlush?(): Promise<void> {
+    return Promise.resolve(undefined);
+  }
 }
